@@ -1,7 +1,7 @@
 require 'bundler/gem_tasks'
 
 def specs(dir)
-  FileList["spec/#{dir}/*_spec.rb"].shuffle.join(' ')
+  FileList["spec/#{dir}/*_spec.rb"].sample
 end
 
 desc 'Runs all the specs'
