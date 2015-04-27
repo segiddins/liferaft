@@ -16,5 +16,22 @@ module Liferaft
       @patch = components[1].to_i / 1000
       @build = components[1].to_i % 1000
     end
+
+    def >(other)
+      other < self
+    end
+
+    def <(other)
+      return true if major < other.major
+      return true if minor < other.minor
+      return true if patch < other.patch
+      build < other.build
+    end
+
+    def ==(other)
+      other.instance_of?(self.class) &&
+        major == other.major && minor == other.minor &&
+        patch == other.patch && build == other.build
+    end
   end
 end
