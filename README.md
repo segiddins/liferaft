@@ -1,5 +1,10 @@
 # Liferaft
 
+[![Build Status](http://img.shields.io/travis/neonichu/liferaft/master.svg?style=flat)](https://travis-ci.org/neonichu/liferaft)
+[![Coverage Status](https://coveralls.io/repos/neonichu/liferaft/badge.svg)](https://coveralls.io/r/neonichu/liferaft)
+[![Gem Version](http://img.shields.io/gem/v/liferaft.svg?style=flat)](http://badge.fury.io/rb/liferaft)
+[![Code Climate](http://img.shields.io/codeclimate/github/neonichu/liferaft.svg?style=flat)](https://codeclimate.com/github/neonichu/liferaft)
+
 Liferaft parses Apple build numbers, like `6D1002`.
 
 ## Usage
