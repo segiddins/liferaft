@@ -1,0 +1,86 @@
+require File.expand_path('../spec_helper', __FILE__)
+
+module Liferaft
+  describe Version do
+    it 'parses 6D570 correctly' do
+      version = Version.new('6D570')
+
+      version.major.should == 6
+      version.minor.should == 3
+      version.patch.should == 0
+      version.build.should == 570
+    end
+
+    it 'parses 6D1002 correctly' do
+      version = Version.new('6D1002')
+
+      version.major.should == 6
+      version.minor.should == 3
+      version.patch.should == 1
+      version.build.should == 002
+    end
+
+    it 'parses 6E7 correctly' do
+      version = Version.new('6E7')
+
+      version.major.should == 6
+      version.minor.should == 4
+      version.patch.should == 0
+      version.build.should == 7
+    end
+
+    it 'parses 6E14 correctly' do
+      version = Version.new('6E14')
+
+      version.major.should == 6
+      version.minor.should == 4
+      version.patch.should == 0
+      version.build.should == 14
+    end
+
+    it 'parses 6E14 correctly' do
+      version = Version.new('6E14')
+
+      version.major.should == 6
+      version.minor.should == 4
+      version.patch.should == 0
+      version.build.should == 14
+    end
+
+    it 'parses 16E14 correctly' do
+      version = Version.new('16E14')
+
+      version.major.should == 16
+      version.minor.should == 4
+      version.patch.should == 0
+      version.build.should == 14
+    end
+
+    it 'is resilient against empty minor versions' do
+      version = Version.new('614')
+
+      version.major.should == 0
+      version.minor.should == 0
+      version.patch.should == 0
+      version.build.should == 0
+    end
+
+    it 'is resilient against multi-character minor versions' do
+      version = Version.new('6EE14')
+
+      version.major.should == 0
+      version.minor.should == 0
+      version.patch.should == 0
+      version.build.should == 0
+    end
+
+    it 'is resilient against parsing broken versions' do
+      version = Version.new('ERTTR456E')
+
+      version.major.should == 0
+      version.minor.should == 0
+      version.patch.should == 0
+      version.build.should == 0
+    end
+  end
+end
