@@ -1,6 +1,20 @@
 require File.expand_path('../spec_helper', __FILE__)
 
 module Liferaft
+  describe Liferaft do
+    it 'writes 6D570 correctly' do
+      version_string = Liferaft.version_string_create(6, 3, 0, 570)
+
+      version_string.should == '6D570'
+    end
+
+    it 'writes 6D1002 correctly' do
+      version_string = Liferaft.version_string_create(6, 3, 1, 2)
+
+      version_string.should == '6D1002'
+    end
+  end
+
   describe Version do
     it 'parses 6D570 correctly' do
       version = Version.new('6D570')

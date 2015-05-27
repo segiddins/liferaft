@@ -1,4 +1,8 @@
 module Liferaft
+  def self.version_string_create(major, minor, patch, build = 0)
+    "#{major}#{(minor + 'A'.ord).chr}#{patch * 1000 + build}"
+  end
+
   class Version
     attr_reader :major, :minor, :patch, :build
 
