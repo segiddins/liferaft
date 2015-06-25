@@ -2,7 +2,10 @@ Lint/Void:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 27
+
+Metrics/CyclomaticComplexity:
+  Max: 7
 
 Metrics/LineLength:
   Max: 100

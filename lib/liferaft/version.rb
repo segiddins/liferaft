@@ -22,7 +22,7 @@ module Liferaft
     end
 
     def to_s
-      return "#{@major}.#{@minor}.#{@patch} Build #{@build}"
+      "#{@major}.#{@minor}.#{@patch} Build #{@build}"
     end
 
     def >(other)
