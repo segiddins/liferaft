@@ -123,5 +123,11 @@ module Liferaft
       version.patch.should == 0
       version.build.should == 0
     end
+
+    it 'can convert a Version object to string' do
+      version = Version.new('6E14')
+
+      version.to_s.should == '6.4.0 Build 14'
+    end
   end
 end

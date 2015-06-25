@@ -21,6 +21,10 @@ module Liferaft
       @build = (character.length == 2 ? character[-1].ord : 0) + components[1].to_i % 1000
     end
 
+    def to_s
+      return "#{@major}.#{@minor}.#{@patch} Build #{@build}"
+    end
+
     def >(other)
       other < self
     end
