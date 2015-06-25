@@ -31,8 +31,11 @@ module Liferaft
 
     def <(other)
       return true if major < other.major
+      return false if major != other.major
       return true if minor < other.minor
+      return false if minor != other.minor
       return true if patch < other.patch
+      return false if patch != other.patch
       build < other.build
     end
 

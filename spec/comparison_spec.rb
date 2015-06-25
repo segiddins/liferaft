@@ -20,7 +20,7 @@ module Liferaft
     it 'implements greater-than-or-equals operator' do
       v1 = Version.new('6D570')
       v2 = Version.new('6D570')
-      v3 = Version.new('6D1002')
+      v3 = Version.new('6D002')
 
       v2.should >= v1
       v2.should >= v3
