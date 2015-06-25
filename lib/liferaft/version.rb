@@ -10,7 +10,7 @@ module Liferaft
       components = version_string.downcase.split(/[a-z]/)
       character = version_string.downcase.gsub(/[^a-z]/, '')
 
-      if character.length != 1
+      if character.length > 2 || character.length == 0
         @major = @minor = @patch = @build = 0
         return
       end
@@ -18,7 +18,7 @@ module Liferaft
       @major = components[0].to_i
       @minor = character.ord - 'a'.ord
       @patch = components[1].to_i / 1000
-      @build = components[1].to_i % 1000
+      @build = (character.length == 2 ? character[-1].ord : 0) + components[1].to_i % 1000
     end
 
     def >(other)

@@ -16,6 +16,24 @@ module Liferaft
   end
 
   describe Version do
+    it 'parses 6E7 correctly' do
+      version = Version.new('6E7')
+
+      version.major.should == 6
+      version.minor.should == 4
+      version.patch.should == 0
+      version.build.should == 7
+    end
+
+    it 'parses 6C131e correctly' do
+      version = Version.new('6C131e')
+
+      version.major.should == 6
+      version.minor.should == 2
+      version.patch.should == 0
+      version.build.should == 232
+    end
+
     it 'parses 6D570 correctly' do
       version = Version.new('6D570')
 
@@ -70,6 +88,15 @@ module Liferaft
       version.build.should == 14
     end
 
+    it 'parses 7A121l correctly' do
+      version = Version.new('7A121l')
+
+      version.major.should == 7
+      version.minor.should == 0
+      version.patch.should == 0
+      version.build.should == 229
+    end
+
     it 'is resilient against empty minor versions' do
       version = Version.new('614')
 
@@ -80,7 +107,7 @@ module Liferaft
     end
 
     it 'is resilient against multi-character minor versions' do
-      version = Version.new('6EE14')
+      version = Version.new('6EEE14')
 
       version.major.should == 0
       version.minor.should == 0
