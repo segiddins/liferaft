@@ -25,11 +25,19 @@ module Liferaft
       other < self
     end
 
+    def >=(other)
+      other < self || other == self
+    end
+
     def <(other)
       return true if major < other.major
       return true if minor < other.minor
       return true if patch < other.patch
       build < other.build
+    end
+
+    def <=(other)
+      self < other || other == self
     end
 
     def ==(other)
