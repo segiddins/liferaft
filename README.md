@@ -12,7 +12,7 @@ Liferaft parses Apple build numbers, like `6D1002`.
 ```ruby
 v = Version.new('6D1002')
 
-puts '#{v.major}.#{v.minor}.#{v.patch} Build #{v.build}'
+puts "#{v.major}.#{v.minor}.#{v.patch} Build #{v.build}"
 ## => '6.3.1 Build 2'
 ```
 
