@@ -4,6 +4,8 @@ module Liferaft
   end
 
   class Version
+    include Comparable
+
     attr_reader :major, :minor, :patch, :build
 
     def initialize(version_string)
@@ -25,32 +27,10 @@ module Liferaft
       "#{@major}.#{@minor}.#{@patch} Build #{@build}"
     end
 
-    def >(other)
-      other < self
-    end
-
-    def >=(other)
-      other < self || other == self
-    end
-
-    def <(other)
-      return true if major < other.major
-      return false if major != other.major
-      return true if minor < other.minor
-      return false if minor != other.minor
-      return true if patch < other.patch
-      return false if patch != other.patch
-      build < other.build
-    end
-
-    def <=(other)
-      self < other || other == self
-    end
-
-    def ==(other)
-      other.instance_of?(self.class) &&
-        major == other.major && minor == other.minor &&
-        patch == other.patch && build == other.build
+    def <=>(other)
+      %i(major minor patch build).lazy.map do |component|
+        send(component) <=> other.send(component)
+      end.find(&:nonzero?) || 0
     end
   end
 end
