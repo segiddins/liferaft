@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Boris Bügling']
   spec.email         = ['boris@icculus.org']
   spec.summary       = 'Liferaft parses Apple build numbers, like 6D1002'
-  spec.homepage      = 'https://github.com/neonichu/liferaft'
+  spec.homepage      = 'https://github.com/segiddins/liferaft'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
