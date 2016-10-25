@@ -49,7 +49,7 @@ module Liferaft
       version.major.should == 6
       version.minor.should == 3
       version.patch.should == 1
-      version.build.should == 002
+      version.build.should == 0o02
     end
 
     it 'parses 6E7 correctly' do

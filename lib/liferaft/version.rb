@@ -12,7 +12,7 @@ module Liferaft
       components = version_string.downcase.split(/[a-z]/)
       character = version_string.downcase.gsub(/[^a-z]/, '')
 
-      if character.length > 2 || character.length == 0
+      if character.length > 2 || character.empty?
         @major = @minor = @patch = @build = 0
         return
       end
